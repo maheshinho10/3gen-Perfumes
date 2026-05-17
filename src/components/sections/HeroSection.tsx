@@ -101,7 +101,7 @@ export function HeroSection() {
           className="h-full w-full object-cover"
           style={{ mixBlendMode: 'screen' }}
         >
-          <source src={assetPath('/videos/Hero%20Section.mp4')} type="video/mp4" />
+          <source src={assetPath('/videos/hero-section.mp4')} type="video/mp4" />
         </video>
       </motion.div>
 
@@ -117,7 +117,7 @@ export function HeroSection() {
           className="h-full w-full object-cover"
           style={{ mixBlendMode: 'screen', transform: 'scaleX(-1)' }}
         >
-          <source src={assetPath('/videos/Hero%20Section.mp4')} type="video/mp4" />
+          <source src={assetPath('/videos/hero-section.mp4')} type="video/mp4" />
         </video>
       </motion.div>
 
