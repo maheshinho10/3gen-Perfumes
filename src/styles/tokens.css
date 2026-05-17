@@ -1,0 +1,529 @@
+/*
+  3GEN DESIGN SYSTEM — CSS TOKENS
+  ─────────────────────────────────
+  All design decisions expressed as CSS custom properties.
+  Import this in app/globals.css as the first layer.
+*/
+
+@layer base {
+
+  :root {
+
+    /* ─── COLOR TOKENS ───────────────────────────────────────────────── */
+
+    /* Blacks */
+    --color-void:       #000000;
+    --color-black:      #0A0A0A;
+    --color-obsidian:   #111111;
+    --color-charcoal:   #1A1A1A;
+    --color-smoke:      #242424;
+    --color-graphite:   #2E2E2E;
+    --color-ash:        #3A3A3A;
+
+    /* Golds */
+    --color-gold-dim:    #5C4A1E;
+    --color-gold-muted:  #8B6914;
+    --color-gold-warm:   #B8922A;
+    --color-gold:        #C9A84C;
+    --color-gold-light:  #DFC070;
+    --color-gold-bright: #F0D590;
+    --color-gold-pale:   #F7ECC4;
+
+    /* Ivories */
+    --color-ivory-dim:   #9A9185;
+    --color-ivory-soft:  #B8AFA3;
+    --color-ivory:       #F0EAE0;
+    --color-ivory-warm:  #F7F2EB;
+    --color-white:       #FFFFFF;
+
+    /* RGB channels for rgba() usage */
+    --rgb-gold:          201, 168, 76;
+    --rgb-ivory:         240, 234, 224;
+    --rgb-black:         10, 10, 10;
+
+    /* ─── SEMANTIC COLORS ────────────────────────────────────────────── */
+
+    --color-background:      var(--color-black);
+    --color-surface:         var(--color-charcoal);
+    --color-surface-raised:  var(--color-smoke);
+    --color-border:          var(--color-graphite);
+    --color-border-accent:   rgba(var(--rgb-gold), 0.3);
+    --color-border-subtle:   rgba(255, 255, 255, 0.06);
+    --color-foreground:      var(--color-ivory);
+    --color-foreground-soft: var(--color-ivory-soft);
+    --color-muted:           var(--color-ivory-dim);
+    --color-accent:          var(--color-gold);
+    --color-accent-dim:      var(--color-gold-muted);
+
+    /* ─── TYPOGRAPHY TOKENS ──────────────────────────────────────────── */
+
+    --font-cormorant: 'Cormorant Garamond', 'Cormorant', Georgia, serif;
+    --font-playfair:  'Playfair Display', Georgia, serif;
+    --font-dm-sans:   'DM Sans', system-ui, sans-serif;
+    --font-inter:     'Inter', system-ui, sans-serif;
+    --font-mono:      'JetBrains Mono', 'Fira Code', monospace;
+
+    /* Weights */
+    --fw-thin:       100;
+    --fw-extralight: 200;
+    --fw-light:      300;
+    --fw-regular:    400;
+    --fw-medium:     500;
+    --fw-semibold:   600;
+
+    /* Letter Spacing */
+    --ls-tightest:  -0.06em;
+    --ls-tighter:   -0.04em;
+    --ls-tight:     -0.02em;
+    --ls-normal:     0em;
+    --ls-wide:       0.05em;
+    --ls-wider:      0.1em;
+    --ls-widest:     0.2em;
+    --ls-label:      0.25em;
+    --ls-caps:       0.3em;
+
+    /* Line Height */
+    --lh-cinema:  0.88;
+    --lh-tight:   1.1;
+    --lh-snug:    1.3;
+    --lh-normal:  1.55;
+    --lh-relaxed: 1.7;
+    --lh-loose:   2;
+
+    /* ─── SPACING TOKENS ─────────────────────────────────────────────── */
+
+    --space-1:   0.25rem;    /*   4px */
+    --space-2:   0.5rem;     /*   8px */
+    --space-3:   0.75rem;    /*  12px */
+    --space-4:   1rem;       /*  16px */
+    --space-5:   1.25rem;    /*  20px */
+    --space-6:   1.5rem;     /*  24px */
+    --space-8:   2rem;       /*  32px */
+    --space-10:  2.5rem;     /*  40px */
+    --space-12:  3rem;       /*  48px */
+    --space-16:  4rem;       /*  64px */
+    --space-20:  5rem;       /*  80px */
+    --space-24:  6rem;       /*  96px */
+    --space-28:  7rem;       /* 112px */
+    --space-32:  8rem;       /* 128px */
+    --space-40:  10rem;      /* 160px */
+    --space-48:  12rem;      /* 192px */
+    --space-64:  16rem;      /* 256px */
+
+    /* Section vertical rhythm */
+    --section-xs:  4rem;
+    --section-sm:  6rem;
+    --section-md:  8rem;
+    --section-lg:  10rem;
+    --section-xl:  12rem;
+    --section-2xl: 16rem;
+
+    /* Page gutter */
+    --gutter-mobile:  1.5rem;
+    --gutter-tablet:  2.5rem;
+    --gutter-desktop: 5rem;
+    --gutter-wide:    6rem;
+
+    /* ─── BORDER RADIUS ──────────────────────────────────────────────── */
+
+    --radius-none: 0;
+    --radius-xs:   2px;
+    --radius-sm:   4px;
+    --radius-md:   6px;
+    --radius-lg:   8px;
+    --radius-xl:   12px;
+    --radius-2xl:  16px;
+    --radius-3xl:  24px;
+    --radius-pill: 9999px;
+    --radius-full: 50%;
+
+    /* ─── SHADOWS ────────────────────────────────────────────────────── */
+
+    /* Depth shadows */
+    --shadow-sm:   0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.5);
+    --shadow-md:   0 4px 12px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.4);
+    --shadow-lg:   0 8px 32px rgba(0,0,0,0.6), 0 4px 8px rgba(0,0,0,0.4);
+    --shadow-xl:   0 20px 60px rgba(0,0,0,0.7), 0 8px 16px rgba(0,0,0,0.5);
+    --shadow-2xl:  0 40px 80px rgba(0,0,0,0.8), 0 16px 32px rgba(0,0,0,0.5);
+
+    /* Gold glow */
+    --glow-xs:   0 0 8px rgba(var(--rgb-gold), 0.12);
+    --glow-sm:   0 0 16px rgba(var(--rgb-gold), 0.18), 0 0 4px rgba(var(--rgb-gold), 0.08);
+    --glow-md:   0 0 32px rgba(var(--rgb-gold), 0.20), 0 0 8px rgba(var(--rgb-gold), 0.12);
+    --glow-lg:   0 0 48px rgba(var(--rgb-gold), 0.22), 0 0 16px rgba(var(--rgb-gold), 0.15);
+    --glow-xl:   0 0 80px rgba(var(--rgb-gold), 0.25), 0 0 30px rgba(var(--rgb-gold), 0.18), 0 0 8px rgba(var(--rgb-gold), 0.10);
+    --glow-halo: 0 0 120px rgba(var(--rgb-gold), 0.30), 0 0 60px rgba(var(--rgb-gold), 0.20), 0 0 20px rgba(var(--rgb-gold), 0.12);
+
+    /* Inset effects */
+    --glow-inset:      inset 0 1px 0 rgba(var(--rgb-gold), 0.15), inset 0 -1px 0 rgba(0,0,0,0.4);
+    --glow-inset-gold: inset 0 0 30px rgba(var(--rgb-gold), 0.08);
+
+    /* Ivory glow */
+    --glow-ivory-sm: 0 0 20px rgba(var(--rgb-ivory), 0.12);
+    --glow-ivory-md: 0 0 40px rgba(var(--rgb-ivory), 0.18);
+
+    /* ─── ANIMATION TIMINGS ──────────────────────────────────────────── */
+
+    /* Durations */
+    --dur-instant:   150ms;
+    --dur-fast:      300ms;
+    --dur-base:      600ms;
+    --dur-slow:      900ms;
+    --dur-cinematic: 1400ms;
+    --dur-epic:      2000ms;
+
+    /* Easing */
+    --ease-luxury:     cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-cinematic:  cubic-bezier(0.76, 0, 0.24, 1);
+    --ease-gentle:     cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-magnetic:   cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-power:      cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-sharp:      cubic-bezier(0.4, 0, 1, 1);
+    --ease-standard:   cubic-bezier(0.0, 0, 0.2, 1);
+
+    /* Combined transition presets */
+    --transition-base:    all var(--dur-base) var(--ease-luxury);
+    --transition-fast:    all var(--dur-fast) var(--ease-luxury);
+    --transition-slow:    all var(--dur-slow) var(--ease-luxury);
+    --transition-color:   color var(--dur-fast) var(--ease-gentle),
+                          background-color var(--dur-fast) var(--ease-gentle),
+                          border-color var(--dur-fast) var(--ease-gentle);
+    --transition-opacity: opacity var(--dur-base) var(--ease-luxury);
+    --transition-transform:transform var(--dur-base) var(--ease-luxury);
+    --transition-shadow:  box-shadow var(--dur-base) var(--ease-gentle);
+
+    /* ─── GLASS / BLUR ───────────────────────────────────────────────── */
+
+    --glass-bg:          rgba(255, 255, 255, 0.03);
+    --glass-bg-raised:   rgba(255, 255, 255, 0.05);
+    --glass-border:      rgba(var(--rgb-gold), 0.12);
+    --glass-border-hover:rgba(var(--rgb-gold), 0.28);
+    --glass-blur:        blur(20px) saturate(180%);
+    --glass-blur-heavy:  blur(40px) saturate(200%);
+
+    /* ─── GRADIENTS ──────────────────────────────────────────────────── */
+
+    --gradient-gold:         linear-gradient(135deg, #5C4A1E 0%, #C9A84C 50%, #F0D590 100%);
+    --gradient-gold-soft:    linear-gradient(135deg, #8B6914 0%, #C9A84C 100%);
+    --gradient-gold-h:       linear-gradient(90deg, #8B6914 0%, #C9A84C 50%, #8B6914 100%);
+    --gradient-dark:         linear-gradient(180deg, #0A0A0A 0%, #1A1A1A 60%, #0A0A0A 100%);
+    --gradient-vignette:     radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.75) 100%);
+    --gradient-vignette-b:   linear-gradient(to bottom, transparent 50%, rgba(10,10,10,0.95) 100%);
+    --gradient-shimmer-gold: linear-gradient(90deg, transparent 0%, rgba(var(--rgb-gold), 0.3) 50%, transparent 100%);
+
+    /* ─── Z-INDEX SCALE ──────────────────────────────────────────────── */
+
+    --z-below:   -1;
+    --z-base:     0;
+    --z-raised:  10;
+    --z-float:   20;
+    --z-overlay: 30;
+    --z-modal:   40;
+    --z-nav:     50;
+    --z-toast:   60;
+    --z-cursor:  70;
+    --z-top:    100;
+
+    /* ─── CONTAINER WIDTHS ───────────────────────────────────────────── */
+
+    --container-prose:   62ch;
+    --container-content: 1320px;
+    --container-page:    1600px;
+  }
+
+} /* end @layer base */
+
+
+/* ─── GLOBAL BASE STYLES ─────────────────────────────────────────────── */
+
+@layer base {
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-dm-sans);
+    font-weight: var(--fw-light);
+    line-height: var(--lh-normal);
+    overflow-x: hidden;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: rgba(var(--rgb-gold), 0.25);
+    color: var(--color-ivory);
+  }
+
+  /* Focus visible — gold ring */
+  :focus-visible {
+    outline: 1px solid var(--color-gold);
+    outline-offset: 4px;
+  }
+
+  /* Scrollbar — minimal dark style */
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: var(--color-black); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-graphite);
+    border-radius: var(--radius-pill);
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-gold-muted); }
+
+  /* Headings — serif by default */
+  h1, h2, h3, h4 {
+    font-family: var(--font-cormorant);
+    font-weight: var(--fw-light);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-tight);
+    color: var(--color-ivory);
+  }
+
+  h5, h6 {
+    font-family: var(--font-dm-sans);
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    color: var(--color-ivory-soft);
+  }
+
+  p {
+    color: var(--color-ivory-soft);
+    max-width: var(--container-prose);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-color);
+  }
+
+  img, video {
+    display: block;
+    max-width: 100%;
+  }
+
+  button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+  }
+
+  input, textarea, select {
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+}
+
+
+/* ─── UTILITY CLASSES ────────────────────────────────────────────────── */
+
+@layer utilities {
+
+  /* Text treatments */
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-shimmer {
+    background: var(--gradient-gold-h);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* Display type — editorial scale */
+  .type-display-xl {
+    font-family: var(--font-cormorant);
+    font-size: clamp(5rem, 14vw, 18rem);
+    font-weight: var(--fw-light);
+    line-height: var(--lh-cinema);
+    letter-spacing: var(--ls-tightest);
+  }
+
+  .type-display-lg {
+    font-family: var(--font-cormorant);
+    font-size: clamp(3.5rem, 10vw, 12rem);
+    font-weight: var(--fw-light);
+    line-height: 0.9;
+    letter-spacing: var(--ls-tighter);
+  }
+
+  .type-display-md {
+    font-family: var(--font-cormorant);
+    font-size: clamp(2.5rem, 7vw, 8rem);
+    font-weight: var(--fw-light);
+    line-height: var(--lh-tight);
+    letter-spacing: var(--ls-tight);
+  }
+
+  .type-display-sm {
+    font-family: var(--font-cormorant);
+    font-size: clamp(2rem, 5vw, 5rem);
+    font-weight: var(--fw-light);
+    line-height: var(--lh-snug);
+    letter-spacing: -0.01em;
+  }
+
+  /* Label — uppercase tracked */
+  .type-label {
+    font-family: var(--font-dm-sans);
+    font-size: 0.75rem;
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-label);
+    text-transform: uppercase;
+    color: var(--color-gold);
+  }
+
+  .type-label-sm {
+    font-family: var(--font-dm-sans);
+    font-size: 0.625rem;
+    font-weight: var(--fw-medium);
+    letter-spacing: var(--ls-caps);
+    text-transform: uppercase;
+    color: var(--color-ivory-dim);
+  }
+
+  /* Italic serif — product names, quotes */
+  .type-italic {
+    font-family: var(--font-cormorant);
+    font-style: italic;
+    font-weight: var(--fw-light);
+  }
+
+  /* Glass panel */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+  }
+
+  .glass-raised {
+    background: var(--glass-bg-raised);
+    backdrop-filter: var(--glass-blur-heavy);
+    -webkit-backdrop-filter: var(--glass-blur-heavy);
+    border: 1px solid var(--glass-border);
+  }
+
+  /* Gold glow shadows */
+  .glow-xs  { box-shadow: var(--glow-xs); }
+  .glow-sm  { box-shadow: var(--glow-sm); }
+  .glow-md  { box-shadow: var(--glow-md); }
+  .glow-lg  { box-shadow: var(--glow-lg); }
+  .glow-xl  { box-shadow: var(--glow-xl); }
+  .glow-halo { box-shadow: var(--glow-halo); }
+
+  /* Hover glow — reveal on hover */
+  .hover-glow {
+    transition: box-shadow var(--dur-base) var(--ease-gentle),
+                border-color var(--dur-base) var(--ease-gentle);
+  }
+  .hover-glow:hover {
+    box-shadow: var(--glow-md);
+    border-color: var(--glass-border-hover);
+  }
+
+  /* Vignette overlay */
+  .vignette::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-vignette);
+    pointer-events: none;
+  }
+
+  /* Grain texture */
+  .grain::before {
+    content: '';
+    position: fixed;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.035;
+    pointer-events: none;
+    animation: grain 0.8s steps(2) infinite;
+    z-index: var(--z-top);
+  }
+
+  /* Gold divider line */
+  .divider-gold {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+    width: 100%;
+    opacity: 0.4;
+  }
+
+  /* Thin gold vertical rule */
+  .rule-gold {
+    width: 1px;
+    background: linear-gradient(180deg, transparent, var(--color-gold), transparent);
+    opacity: 0.4;
+  }
+
+  /* Shimmer effect on element */
+  .shimmer-overlay {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-shimmer-gold);
+    background-size: 200% 100%;
+    animation: shimmer 2.5s linear infinite;
+    pointer-events: none;
+  }
+
+  /* Section container */
+  .container-luxury {
+    max-width: var(--container-content);
+    margin-inline: auto;
+    padding-inline: var(--gutter-mobile);
+  }
+  @media (min-width: 640px) {
+    .container-luxury { padding-inline: var(--gutter-tablet); }
+  }
+  @media (min-width: 1024px) {
+    .container-luxury { padding-inline: var(--gutter-desktop); }
+  }
+  @media (min-width: 1280px) {
+    .container-luxury { padding-inline: var(--gutter-wide); }
+  }
+
+  /* Reduced motion — disable animations */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
