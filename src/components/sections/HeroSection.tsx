@@ -9,6 +9,7 @@ import {
 } from 'framer-motion'
 import { easing, duration } from '@/lib/tokens'
 import { PerfumeBottle } from '@/src/components/ui/PerfumeBottle'
+import { assetPath } from '@/lib/utils'
 
 // ─── Brand Colors ─────────────────────────────────────────────────────────────
 const BG = '#07100A'
@@ -100,7 +101,7 @@ export function HeroSection() {
           className="h-full w-full object-cover"
           style={{ mixBlendMode: 'screen' }}
         >
-          <source src="/videos/Hero%20Section.mp4" type="video/mp4" />
+          <source src={assetPath('/videos/Hero%20Section.mp4')} type="video/mp4" />
         </video>
       </motion.div>
 
@@ -116,7 +117,7 @@ export function HeroSection() {
           className="h-full w-full object-cover"
           style={{ mixBlendMode: 'screen', transform: 'scaleX(-1)' }}
         >
-          <source src="/videos/Hero%20Section.mp4" type="video/mp4" />
+          <source src={assetPath('/videos/Hero%20Section.mp4')} type="video/mp4" />
         </video>
       </motion.div>
 

@@ -8,6 +8,7 @@ import {
   useInView,
 } from 'framer-motion'
 import { easing, duration } from '@/lib/tokens'
+import { assetPath } from '@/lib/utils'
 
 // ─── Shared animation config ─────────────────────────────────────────────────
 
@@ -152,7 +153,7 @@ function OpeningStatement() {
           mixBlendMode: 'screen',
         }}
       >
-        <source src="/videos/Spray.mp4" type="video/mp4" />
+        <source src={assetPath('/videos/Spray.mp4')} type="video/mp4" />
       </video>
 
       {/* Dark gradient — top + bottom fade for readability */}
