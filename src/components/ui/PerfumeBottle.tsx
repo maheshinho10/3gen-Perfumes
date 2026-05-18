@@ -358,7 +358,7 @@ export function PerfumeBottle({ variant = 'green' }: PerfumeBottleProps) {
               lineHeight: 1.5,
             }}
           >
-            Wear The Crown<br />And Feel.
+            Wear The Crown<br /> And Feel.
           </div>
         </div>
       </div>
