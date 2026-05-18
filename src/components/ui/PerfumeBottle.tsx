@@ -1,5 +1,7 @@
 'use client'
 
+import { assetPath } from '@/lib/utils'
+
 // 3GEN Oud Form — variant-aware CSS perfume bottle
 // Variants: 'green' (dark forest), 'white' (frosted ivory), 'tan' (cognac amber)
 
@@ -290,7 +292,7 @@ export function PerfumeBottle({ variant = 'green' }: PerfumeBottleProps) {
         >
           {/* 3GEN logo — SVG is natively transparent, no background */}
           <img
-            src="/images/Logo/3_gen_logo-removebg-preview-removebg-preview.png"
+            src={assetPath('/images/Logo/3_gen_logo-removebg-preview-removebg-preview.png')}
             alt="3GEN"
             style={{
               width: '100px',
