@@ -149,8 +149,8 @@ export function PerfumeBottle({ variant = 'green' }: PerfumeBottleProps) {
           background: variant === 'white'
             ? 'radial-gradient(ellipse 55% 60% at 50% 55%, rgba(255,240,210,0.10) 0%, rgba(220,210,190,0.05) 50%, transparent 70%)'
             : variant === 'tan'
-            ? 'radial-gradient(ellipse 55% 60% at 50% 55%, rgba(230,165,45,0.14) 0%, rgba(160,100,20,0.07) 50%, transparent 70%)'
-            : 'radial-gradient(ellipse 55% 60% at 50% 55%, rgba(201,168,76,0.12) 0%, rgba(42,96,64,0.06) 50%, transparent 70%)',
+              ? 'radial-gradient(ellipse 55% 60% at 50% 55%, rgba(230,165,45,0.14) 0%, rgba(160,100,20,0.07) 50%, transparent 70%)'
+              : 'radial-gradient(ellipse 55% 60% at 50% 55%, rgba(201,168,76,0.12) 0%, rgba(42,96,64,0.06) 50%, transparent 70%)',
           filter: 'blur(32px)',
           zIndex: -1,
           pointerEvents: 'none',
@@ -288,28 +288,18 @@ export function PerfumeBottle({ variant = 'green' }: PerfumeBottleProps) {
             width: '106px',
           }}
         >
-          {/* Flame-in-circle logo */}
-          <svg width="60" height="60" viewBox="0 0 54 54" fill="none" aria-hidden>
-            <circle cx="27" cy="27" r="24" stroke={v.svgStroke} strokeWidth="1" />
-            <path
-              d="M27 11 C27 11 18 21 18 29 C18 34.5 22 40 27 40 C32 40 36 34.5 36 29 C36 21 27 11 27 11 Z"
-              fill={v.svgFlameFill}
-            />
-            <path
-              d="M27 21 C27 21 22 26.5 22 30.5 C22 33 24 36 27 36 C30 36 32 33 32 30.5 C32 26.5 27 21 27 21 Z"
-              fill={v.svgFlameInner}
-            />
-          </svg>
-
-          <div
+          {/* 3GEN logo — SVG is natively transparent, no background */}
+          <img
+            src="/images/Logo/3_gen_logo-removebg-preview-removebg-preview.png"
+            alt="3GEN"
             style={{
-              fontFamily: 'var(--font-cormorant-garamond), Georgia, serif',
-              fontSize: '16px', letterSpacing: '0.44em',
-              color: v.labelText, fontWeight: 300,
+              width: '100px',
+              height: '100px',
+              objectFit: 'contain',
+              display: 'block',
+              flexShrink: 0,
             }}
-          >
-            3GEN
-          </div>
+          />
 
           <div
             style={{

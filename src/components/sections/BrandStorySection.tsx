@@ -211,7 +211,7 @@ function OpeningStatement() {
             }}
           >
             <RevealLine delay={0.15}>
-              <span style={{ color: '#C4BEB8' }}>Wear</span>
+              <span style={{ color: '#C4BEB8' }}>Sillage</span>
             </RevealLine>
 
             <RevealLine delay={0.28} style={{ paddingLeft: 'clamp(0.5rem, 4vw, 4rem)', marginTop: 'clamp(-0.2rem, -0.5vw, -0.5rem)' }}>
@@ -222,13 +222,13 @@ function OpeningStatement() {
                   fontStyle: 'italic',
                 }}
               >
-                The Crown
+                Aura In
               </span>
             </RevealLine>
 
             <RevealLine delay={0.56} style={{ paddingLeft: 'clamp(1rem, 8vw, 11rem)', marginTop: 'clamp(-0.2rem, -0.5vw, -0.5rem)' }}>
               <span style={{ color: 'rgba(196,190,184,0.45)', fontStyle: 'italic' }}>
-                And Feel.
+                Every Spray.
               </span>
             </RevealLine>
           </div>
@@ -278,6 +278,18 @@ function FoundingStory() {
         background: 'linear-gradient(180deg, #07100A 0%, #0B1710 50%, #07100A 100%)',
       }}
     >
+      {/* Top fade — continues dissolve from HeroSection */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0, left: 0, right: 0,
+          height: '220px',
+          background: 'linear-gradient(to bottom, #07100A 0%, transparent 100%)',
+          pointerEvents: 'none',
+          zIndex: 2,
+        }}
+      />
+
       {/* Large watermark numeral */}
       <motion.div
         style={{
@@ -974,8 +986,8 @@ export function BrandStorySection() {
     >
       <OpeningStatement />
       <FoundingStory />
-      {/* Green → Ivory transition */}
-      <div style={{ height: '160px', background: 'linear-gradient(180deg, #07100A 0%, #0D1C14 25%, #2A5C3D 60%, #FAF6EE 100%)' }} />
+      {/* Dark → Ivory transition — slow, no green flash */}
+      <div style={{ height: '200px', background: 'linear-gradient(180deg, #07100A 0%, #0C150E 30%, #1A2B1E 60%, #E8E2D8 88%, #FAF6EE 100%)' }} />
       <PhilosophyPillars />
     </section>
   )

@@ -6,14 +6,15 @@ import { motion, useScroll, useTransform, useMotionTemplate, AnimatePresence } f
 import { useScrollState } from '@/src/hooks/useScrollState'
 import { MobileMenu } from './MobileMenu'
 import { easing, duration } from '@/lib/tokens'
+import { assetPath } from '@/lib/utils'
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const NAV_LINKS = [
   { label: 'Collections', href: '/collections', sub: 'All scents' },
-  { label: 'Discover',    href: '/discover',    sub: 'Our world' },
+  { label: 'Discover', href: '/discover', sub: 'Our world' },
   { label: 'Ingredients', href: '/ingredients', sub: 'The craft' },
-  { label: 'About',       href: '/about',       sub: '3GEN' },
+  { label: 'About', href: '/about', sub: '3GEN' },
 ] as const
 
 const BRAND_ENTER = {
@@ -27,7 +28,7 @@ const BRAND_ENTER = {
 }
 
 const NAV_ENTER = {
-  hidden:  { opacity: 0, y: -8, filter: 'blur(4px)' },
+  hidden: { opacity: 0, y: -8, filter: 'blur(4px)' },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
@@ -46,7 +47,7 @@ function HamburgerIcon({ isOpen }: { isOpen: boolean }) {
         style={{ backgroundColor: '#C4BEB8' }}
         animate={isOpen
           ? { rotate: -45, y: 5, width: '100%', originX: 1 }
-          : { rotate: 0,   y: 0, width: '100%' }
+          : { rotate: 0, y: 0, width: '100%' }
         }
         transition={{ duration: 0.35, ease: easing.luxury }}
       />
@@ -64,7 +65,7 @@ function HamburgerIcon({ isOpen }: { isOpen: boolean }) {
         style={{ backgroundColor: '#C4BEB8' }}
         animate={isOpen
           ? { rotate: 45, y: -5, width: '100%', originX: 1 }
-          : { rotate: 0,  y: 0,  width: '83%' }
+          : { rotate: 0, y: 0, width: '83%' }
         }
         transition={{ duration: 0.35, ease: easing.luxury }}
       />
@@ -123,7 +124,7 @@ export function Navbar() {
   const { isScrolled, isHidden } = useScrollState(50)
 
   const toggleMenu = useCallback(() => setMenuOpen((v) => !v), [])
-  const closeMenu  = useCallback(() => setMenuOpen(false), [])
+  const closeMenu = useCallback(() => setMenuOpen(false), [])
 
   // Scroll-driven values
   const { scrollY } = useScroll()
@@ -172,38 +173,23 @@ export function Navbar() {
               initial="hidden"
               animate="visible"
             >
-              <Link href="/" className="group relative" aria-label="3GEN — Home">
-                <motion.span
-                  className="block font-cormorant font-light leading-none"
+              <Link href="/" className="group relative flex items-center gap-3" aria-label="3GEN — Home">
+                {/* SVG logo — natively transparent, works on any background */}
+                <motion.img
+                  src={assetPath('/images/Logo/3_gen_logo-removebg-preview-removebg-preview.png')}
+                  alt="3GEN Parfumerie"
+                  whileHover={{ scale: 1.06 }}
+                  transition={{ duration: 0.4, ease: easing.luxury }}
                   style={{
-                    fontSize: 'clamp(1.1rem, 2vw, 1.35rem)',
-                    letterSpacing: '0.3em',
-                    color: '#C4BEB8',
+                    height: '72px',
+                    width: 'auto',
+                    display: 'block',
+                    flexShrink: 0,
                   }}
-                  whileHover={{
-                    color: '#C9A84C',
-                    letterSpacing: '0.35em',
-                    transition: { duration: 0.5, ease: easing.luxury },
-                  }}
-                >
-                  3GEN
-                </motion.span>
+                />
 
-                {/* Subtitle — fades in on hover */}
-                <motion.span
-                  className="absolute left-0 top-full mt-0.5 block overflow-hidden font-sans text-[0.5rem] uppercase"
-                  style={{
-                    letterSpacing: '0.25em',
-                    color: 'rgba(201,168,76,0)',
-                    whiteSpace: 'nowrap',
-                  }}
-                  whileHover={{
-                    color: 'rgba(201,168,76,0.6)',
-                    transition: { duration: 0.4, ease: easing.gentle },
-                  }}
-                >
-                  Parfumerie
-                </motion.span>
+                {/* Wordmark beside logo — desktop only */}
+
               </Link>
             </motion.div>
 

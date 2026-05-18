@@ -121,6 +121,15 @@ export function HeroSection() {
         </video>
       </motion.div>
 
+      {/* Top cover — continues the fade from VideoHeroSection above */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: 'linear-gradient(to bottom, #07100A 0%, transparent 22%)',
+          zIndex: 1,
+        }}
+      />
+
       {/* Forest green tint overlay — unifies video with brand color */}
       <div
         className="pointer-events-none absolute inset-0"
@@ -310,6 +319,17 @@ export function HeroSection() {
       >
         01
       </motion.div>
+
+      {/* Bottom fade — dissolves into BrandStorySection (#07100A) */}
+      <div
+        className="pointer-events-none absolute bottom-0 left-0 right-0"
+        style={{
+          height: '35%',
+          background:
+            'linear-gradient(to bottom, transparent 0%, rgba(7,16,10,0.6) 45%, rgba(7,16,10,0.9) 72%, #07100A 100%)',
+          zIndex: 15,
+        }}
+      />
     </motion.section>
   )
 }
