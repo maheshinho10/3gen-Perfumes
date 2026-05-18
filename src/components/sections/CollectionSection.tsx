@@ -7,9 +7,9 @@ import { easing, duration } from '@/lib/tokens'
 import { PerfumeBottle } from '@/src/components/ui/PerfumeBottle'
 
 // ─── Brand Colors ─────────────────────────────────────────────────────────────
-const BG = '#07100A'
-const GOLD = '#C9A84C'
-const OYSTER = '#C4BEB8'
+const BG = '#FAF6EE'
+const GOLD = '#2E7D52'
+const OYSTER = '#07100A'
 
 // ─── Single Product ───────────────────────────────────────────────────────────
 const PRODUCT = {
@@ -27,7 +27,7 @@ const PRODUCT = {
   longevity: '10–14 hours',
   sillage: 'Moderate to strong',
   tag: 'Debut Edition',
-  gradient: 'linear-gradient(145deg, #0D1A10 0%, #08100A 40%, #0F1C12 70%, #060E08 100%)',
+  gradient: 'transparent',
   accent: '#2A5C3D',
 } as const
 
@@ -37,16 +37,16 @@ function NoteRow({ tier, label }: { tier: string; label: string }) {
   return (
     <div style={{ display: 'flex', gap: '1rem', alignItems: 'baseline' }}>
       <span style={{
-        fontFamily: 'DM Sans, sans-serif', fontSize: '0.55rem', fontWeight: 500,
-        letterSpacing: '0.22em', textTransform: 'uppercase',
-        color: 'rgba(201,168,76,0.45)', flexShrink: 0, width: '36px',
+        fontFamily: 'DM Sans, sans-serif', fontSize: '0.7rem', fontWeight: 500,
+        letterSpacing: '0.2em', textTransform: 'uppercase',
+        color: 'rgba(46,125,82,0.85)', flexShrink: 0, width: '44px',
       }}>
         {tier}
       </span>
       <span style={{
         fontFamily: 'var(--font-cormorant-garamond), Georgia, serif',
-        fontSize: 'clamp(0.85rem, 1.1vw, 0.95rem)', fontWeight: 300, fontStyle: 'italic',
-        color: 'rgba(196,190,184,0.55)', lineHeight: 1.5,
+        fontSize: 'clamp(1rem, 1.3vw, 1.15rem)', fontWeight: 300, fontStyle: 'italic',
+        color: 'rgba(7,16,10,0.75)', lineHeight: 1.5,
       }}>
         {label}
       </span>
@@ -69,7 +69,7 @@ export function CollectionSection() {
       style={{
         background: BG,
         padding: 'clamp(5rem, 10vw, 12rem) clamp(1.5rem, 7vw, 7rem)',
-        borderTop: '1px solid rgba(42,96,64,0.2)',
+        borderTop: '1px solid rgba(46,125,82,0.2)',
       }}
     >
       <div style={{ maxWidth: '1600px', margin: '0 auto' }}>
@@ -92,8 +92,8 @@ export function CollectionSection() {
             >
               <div style={{ width: '20px', height: '1px', background: GOLD }} />
               <span style={{
-                fontFamily: 'DM Sans, sans-serif', fontSize: '0.6rem', fontWeight: 500,
-                letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD,
+                fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', fontWeight: 500,
+                letterSpacing: '0.28em', textTransform: 'uppercase', color: GOLD,
               }}>
                 03 — The Collection
               </span>
@@ -111,7 +111,7 @@ export function CollectionSection() {
                 }}
               >
                 One accord.{' '}
-                <span style={{ fontStyle: 'italic', color: 'rgba(196,190,184,0.38)' }}>
+                <span style={{ fontStyle: 'italic', color: 'rgba(7,16,10,0.3)' }}>
                   One house.
                 </span>
               </motion.h2>
@@ -127,21 +127,21 @@ export function CollectionSection() {
               href="/collections"
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.75rem',
-                fontFamily: 'DM Sans, sans-serif', fontSize: '0.65rem', fontWeight: 500,
-                letterSpacing: '0.22em', textTransform: 'uppercase',
-                color: 'rgba(201,168,76,0.55)', textDecoration: 'none',
-                padding: '0.75rem 0', borderBottom: '1px solid rgba(201,168,76,0.2)',
+                fontFamily: 'DM Sans, sans-serif', fontSize: '0.8rem', fontWeight: 500,
+                letterSpacing: '0.2em', textTransform: 'uppercase',
+                color: 'rgba(46,125,82,0.75)', textDecoration: 'none',
+                padding: '0.75rem 0', borderBottom: '1px solid rgba(46,125,82,0.3)',
                 transition: `color 400ms ${easing.gentle}, border-color 400ms ${easing.gentle}`,
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLAnchorElement
                 el.style.color = GOLD
-                el.style.borderBottomColor = 'rgba(201,168,76,0.5)'
+                el.style.borderBottomColor = 'rgba(46,125,82,0.6)'
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget as HTMLAnchorElement
-                el.style.color = 'rgba(201,168,76,0.55)'
-                el.style.borderBottomColor = 'rgba(201,168,76,0.2)'
+                el.style.color = 'rgba(46,125,82,0.75)'
+                el.style.borderBottomColor = 'rgba(46,125,82,0.3)'
               }}
             >
               View full details
@@ -173,82 +173,80 @@ export function CollectionSection() {
             style={{ cursor: 'pointer' }}
           >
             <Link href={`/products/${PRODUCT.id}`} style={{ display: 'block', textDecoration: 'none' }}>
-              <div style={{ position: 'relative', overflow: 'hidden', aspectRatio: '3/4', maxWidth: '480px', margin: '0 auto' }}>
-                {/* Background */}
-                <motion.div
-                  animate={{ scale: hovered ? 1.04 : 1 }}
-                  transition={{ duration: 1.4, ease: easing.silk }}
-                  style={{ position: 'absolute', inset: 0, background: PRODUCT.gradient }}
-                />
+              <div style={{ position: 'relative' }}>
 
-                {/* Grain */}
+                {/* Debut Edition tag */}
                 <div style={{
-                  position: 'absolute', inset: 0, zIndex: 1, opacity: 0.04, pointerEvents: 'none',
-                  backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-                }} />
-
-                {/* Forest green glow on hover */}
-                <motion.div
-                  animate={{ opacity: hovered ? 1 : 0 }}
-                  transition={{ duration: 0.9, ease: easing.luxury }}
-                  style={{
-                    position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none',
-                    background: 'radial-gradient(ellipse 60% 50% at 50% 60%, rgba(42,96,64,0.18) 0%, transparent 70%)',
-                  }}
-                />
-
-                {/* Tag */}
-                <div style={{
-                  position: 'absolute', top: '1.25rem', left: '1.25rem', zIndex: 10,
-                  fontFamily: 'DM Sans, sans-serif', fontSize: '0.55rem', fontWeight: 500,
-                  letterSpacing: '0.22em', textTransform: 'uppercase',
-                  color: '#07100A', background: GOLD, padding: '0.3rem 0.75rem',
+                  display: 'flex', justifyContent: 'center', marginBottom: '1.5rem',
                 }}>
-                  {PRODUCT.tag}
+                  <span style={{
+                    fontFamily: 'DM Sans, sans-serif', fontSize: '0.65rem', fontWeight: 600,
+                    letterSpacing: '0.2em', textTransform: 'uppercase',
+                    color: '#FAF6EE', background: GOLD, padding: '0.35rem 0.85rem',
+                  }}>
+                    {PRODUCT.tag}
+                  </span>
                 </div>
 
-                {/* Bottle centered */}
-                <div style={{ position: 'absolute', inset: 0, zIndex: 5, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                {/* Mobile — single green bottle */}
+                <div className="flex lg:hidden" style={{ justifyContent: 'center' }}>
                   <motion.div
-                    animate={{ y: hovered ? -14 : 0, rotate: hovered ? 1.5 : 0 }}
-                    transition={{ type: 'spring', stiffness: 160, damping: 18, mass: 1.2 }}
-                    style={{ scale: 1.10, transformOrigin: 'center center' }}
+                    animate={{ y: hovered ? -14 : [0, -12, 2, -8, 0] }}
+                    transition={hovered
+                      ? { type: 'spring', stiffness: 160, damping: 18, mass: 1.2 }
+                      : { duration: 6.5, ease: 'easeInOut', repeat: Infinity, repeatType: 'loop' }
+                    }
+                    style={{ scale: 0.85, transformOrigin: 'center bottom' }}
                   >
-                    <PerfumeBottle />
+                    <PerfumeBottle variant="green" />
                   </motion.div>
                 </div>
 
-                {/* Bottom vignette */}
-                <div style={{
-                  position: 'absolute', bottom: 0, left: 0, right: 0, height: '45%', zIndex: 6, pointerEvents: 'none',
-                  background: 'linear-gradient(to top, rgba(7,16,10,0.65) 0%, transparent 100%)',
-                }} />
+                {/* Desktop — three bottles */}
+                <div className="hidden lg:flex" style={{ alignItems: 'flex-end', justifyContent: 'center', gap: '0.5rem' }}>
+                  <motion.div
+                    animate={{ y: [0, -10, 2, -6, 0] }}
+                    transition={{ duration: 7.2, ease: 'easeInOut', repeat: Infinity, repeatType: 'loop', delay: 0.8 }}
+                    style={{ scale: 0.82, transformOrigin: 'center bottom', opacity: 0.72 }}
+                  >
+                    <PerfumeBottle variant="white" />
+                  </motion.div>
+                  <motion.div
+                    animate={{ y: hovered ? -14 : [0, -12, 2, -8, 0] }}
+                    transition={hovered
+                      ? { type: 'spring', stiffness: 160, damping: 18, mass: 1.2 }
+                      : { duration: 6.5, ease: 'easeInOut', repeat: Infinity, repeatType: 'loop' }
+                    }
+                    style={{ scale: 1.0, transformOrigin: 'center bottom', zIndex: 2 }}
+                  >
+                    <PerfumeBottle variant="green" />
+                  </motion.div>
+                  <motion.div
+                    animate={{ y: [0, -9, 1, -5, 0] }}
+                    transition={{ duration: 6.8, ease: 'easeInOut', repeat: Infinity, repeatType: 'loop', delay: 1.4 }}
+                    style={{ scale: 0.82, transformOrigin: 'center bottom', opacity: 0.72 }}
+                  >
+                    <PerfumeBottle variant="tan" />
+                  </motion.div>
+                </div>
 
                 {/* "Discover" CTA */}
                 <div style={{
-                  position: 'absolute', bottom: '1.75rem', left: 0, right: 0, zIndex: 10,
-                  display: 'flex', justifyContent: 'center',
-                  opacity: hovered ? 1 : 0.4,
-                  transform: hovered ? 'translateY(0)' : 'translateY(5px)',
+                  display: 'flex', justifyContent: 'center', marginTop: '1.5rem',
+                  opacity: hovered ? 1 : 0.45,
+                  transform: hovered ? 'translateY(0)' : 'translateY(4px)',
                   transition: `opacity 400ms ${easing.luxury}, transform 400ms ${easing.luxury}`,
                 }}>
                   <span style={{
-                    fontFamily: 'DM Sans, sans-serif', fontSize: '0.6rem', fontWeight: 500,
+                    fontFamily: 'DM Sans, sans-serif', fontSize: '0.7rem', fontWeight: 500,
                     letterSpacing: '0.25em', textTransform: 'uppercase',
-                    color: OYSTER, display: 'flex', alignItems: 'center', gap: '0.5rem',
+                    color: '#07100A', display: 'flex', alignItems: 'center', gap: '0.5rem',
                   }}>
                     <span style={{ display: 'block', width: '18px', height: '1px', background: GOLD }} />
                     Discover
                     <span style={{ display: 'block', width: '18px', height: '1px', background: GOLD }} />
                   </span>
                 </div>
-
-                {/* Gold border on hover */}
-                <motion.div
-                  animate={{ opacity: hovered ? 1 : 0, scale: hovered ? 1 : 0.97 }}
-                  transition={{ duration: 0.55, ease: easing.luxury }}
-                  style={{ position: 'absolute', inset: 0, zIndex: 8, border: '1px solid rgba(201,168,76,0.4)', pointerEvents: 'none' }}
-                />
               </div>
             </Link>
           </motion.div>
@@ -259,9 +257,9 @@ export function CollectionSection() {
             {/* Brand + product */}
             <div>
               <div style={{
-                fontFamily: 'DM Sans, sans-serif', fontSize: '0.55rem', fontWeight: 500,
-                letterSpacing: '0.28em', textTransform: 'uppercase',
-                color: 'rgba(201,168,76,0.45)', marginBottom: '0.75rem',
+                fontFamily: 'DM Sans, sans-serif', fontSize: '0.7rem', fontWeight: 500,
+                letterSpacing: '0.26em', textTransform: 'uppercase',
+                color: 'rgba(46,125,82,0.75)', marginBottom: '0.75rem',
               }}>
                 3GEN — Parfumerie
               </div>
@@ -284,31 +282,31 @@ export function CollectionSection() {
                   $285
                 </span>
                 <span style={{
-                  fontFamily: 'DM Sans, sans-serif', fontSize: '0.6rem', fontWeight: 500,
-                  letterSpacing: '0.18em', textTransform: 'uppercase',
-                  color: 'rgba(201,168,76,0.38)',
+                  fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', fontWeight: 500,
+                  letterSpacing: '0.16em', textTransform: 'uppercase',
+                  color: 'rgba(46,125,82,0.65)',
                 }}>
                   60ml · Eau de Parfum
                 </span>
               </div>
             </div>
 
-            {/* Gold divider */}
-            <div style={{ height: '1px', width: '48px', background: 'rgba(201,168,76,0.3)' }} />
+            {/* Divider */}
+            <div style={{ height: '1px', width: '48px', background: 'rgba(46,125,82,0.4)' }} />
 
             {/* Description */}
             <p style={{
               fontFamily: 'DM Sans, sans-serif',
-              fontSize: 'clamp(0.875rem, 1.1vw, 0.9375rem)',
+              fontSize: 'clamp(1rem, 1.3vw, 1.1rem)',
               fontWeight: 300, lineHeight: 1.9,
-              color: 'rgba(196,190,184,0.5)',
+              color: 'rgba(7,16,10,0.72)',
               maxWidth: '48ch',
             }}>
               {PRODUCT.description}
             </p>
 
             {/* Note pyramid */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1.5rem 0', borderTop: '1px solid rgba(42,96,64,0.25)', borderBottom: '1px solid rgba(42,96,64,0.25)' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', padding: '1.5rem 0', borderTop: '1px solid rgba(46,125,82,0.25)', borderBottom: '1px solid rgba(46,125,82,0.25)' }}>
               <NoteRow tier="Top" label={PRODUCT.notes.top} />
               <NoteRow tier="Heart" label={PRODUCT.notes.heart} />
               <NoteRow tier="Base" label={PRODUCT.notes.base} />
@@ -317,12 +315,12 @@ export function CollectionSection() {
             {/* Longevity + sillage */}
             <div style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap' }}>
               <div>
-                <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.55rem', fontWeight: 500, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.4)', marginBottom: '0.3rem' }}>Longevity</div>
-                <div style={{ fontFamily: 'var(--font-cormorant-garamond), Georgia, serif', fontSize: '1rem', fontWeight: 300, fontStyle: 'italic', color: 'rgba(196,190,184,0.55)' }}>{PRODUCT.longevity}</div>
+                <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(46,125,82,0.8)', marginBottom: '0.5rem' }}>Longevity</div>
+                <div style={{ fontFamily: 'var(--font-cormorant-garamond), Georgia, serif', fontSize: '1.2rem', fontWeight: 300, fontStyle: 'italic', color: 'rgba(7,16,10,0.75)' }}>{PRODUCT.longevity}</div>
               </div>
               <div>
-                <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.55rem', fontWeight: 500, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.4)', marginBottom: '0.3rem' }}>Sillage</div>
-                <div style={{ fontFamily: 'var(--font-cormorant-garamond), Georgia, serif', fontSize: '1rem', fontWeight: 300, fontStyle: 'italic', color: 'rgba(196,190,184,0.55)' }}>{PRODUCT.sillage}</div>
+                <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(46,125,82,0.8)', marginBottom: '0.5rem' }}>Sillage</div>
+                <div style={{ fontFamily: 'var(--font-cormorant-garamond), Georgia, serif', fontSize: '1.2rem', fontWeight: 300, fontStyle: 'italic', color: 'rgba(7,16,10,0.75)' }}>{PRODUCT.sillage}</div>
               </div>
             </div>
 
@@ -336,30 +334,30 @@ export function CollectionSection() {
                 href={`/products/${PRODUCT.id}`}
                 style={{
                   display: 'inline-flex', alignItems: 'center', gap: '0.875rem',
-                  padding: '1rem 2.5rem',
-                  background: 'transparent', border: '1px solid rgba(201,168,76,0.35)',
-                  fontFamily: 'DM Sans, sans-serif', fontSize: '0.7rem', fontWeight: 500,
-                  letterSpacing: '0.22em', textTransform: 'uppercase',
-                  color: 'rgba(196,190,184,0.72)', cursor: 'pointer',
+                  padding: '1.1rem 2.75rem',
+                  background: 'transparent', border: '1px solid rgba(46,125,82,0.4)',
+                  fontFamily: 'DM Sans, sans-serif', fontSize: '0.8rem', fontWeight: 500,
+                  letterSpacing: '0.2em', textTransform: 'uppercase',
+                  color: 'rgba(7,16,10,0.75)', cursor: 'pointer',
                   transition: `all 500ms ${easing.luxury}`,
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLAnchorElement
-                  el.style.borderColor = 'rgba(201,168,76,0.75)'
-                  el.style.background = 'rgba(201,168,76,0.07)'
+                  el.style.borderColor = 'rgba(46,125,82,0.75)'
+                  el.style.background = 'rgba(46,125,82,0.08)'
                   el.style.color = OYSTER
-                  el.style.boxShadow = '0 0 32px rgba(201,168,76,0.1)'
+                  el.style.boxShadow = '0 0 32px rgba(46,125,82,0.12)'
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget as HTMLAnchorElement
-                  el.style.borderColor = 'rgba(201,168,76,0.35)'
+                  el.style.borderColor = 'rgba(46,125,82,0.4)'
                   el.style.background = 'transparent'
-                  el.style.color = 'rgba(196,190,184,0.72)'
+                  el.style.color = 'rgba(7,16,10,0.75)'
                   el.style.boxShadow = 'none'
                 }}
               >
                 <span>Add to Bag</span>
-                <span style={{ color: GOLD, fontSize: '0.85rem' }}>→</span>
+                <span style={{ color: GOLD, fontSize: '1rem' }}>→</span>
               </Link>
             </motion.div>
           </div>

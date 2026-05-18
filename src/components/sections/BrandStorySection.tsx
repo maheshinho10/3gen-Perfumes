@@ -695,8 +695,7 @@ function PhilosophyPillars() {
     <div
       style={{
         padding: 'clamp(5rem, 10vw, 12rem) clamp(1.5rem, 7vw, 7rem)',
-        background: '#07100A',
-        borderTop: '1px solid rgba(201,168,76,0.08)',
+        background: '#FAF6EE',
       }}
     >
       <div style={{ maxWidth: '1600px', margin: '0 auto' }}>
@@ -719,11 +718,11 @@ function PhilosophyPillars() {
                 fontSize: 'clamp(1.75rem, 3.5vw, 3.5rem)',
                 lineHeight: 1.15,
                 letterSpacing: '-0.02em',
-                color: '#C4BEB8',
+                color: '#07100A',
               }}
             >
               The principles<br />
-              <span style={{ color: 'rgba(196,190,184,0.35)', fontStyle: 'italic' }}>
+              <span style={{ color: 'rgba(7,16,10,0.3)', fontStyle: 'italic' }}>
                 that define us.
               </span>
             </div>
@@ -733,10 +732,10 @@ function PhilosophyPillars() {
             <p
               style={{
                 fontFamily: 'DM Sans, sans-serif',
-                fontSize: 'clamp(0.8rem, 1vw, 0.9375rem)',
+                fontSize: 'clamp(0.85rem, 1vw, 0.9375rem)',
                 fontWeight: 300,
                 lineHeight: 1.8,
-                color: 'rgba(196,190,184,0.32)',
+                color: 'rgba(7,16,10,0.55)',
                 maxWidth: '38ch',
                 textAlign: 'right',
               }}
@@ -781,14 +780,14 @@ function PillarCard({
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ ...LUXURY, delay: index * 0.14 }}
       whileHover={{
-        backgroundColor: 'rgba(201,168,76,0.025)',
+        backgroundColor: 'rgba(46,125,82,0.05)',
         y: -5,
         transition: { type: 'spring', stiffness: 240, damping: 22, mass: 1.0 },
       }}
       style={{
         padding: 'clamp(2rem, 4vw, 3.5rem)',
-        borderTop: '1px solid rgba(201,168,76,0.08)',
-        borderColor: 'rgba(201,168,76,0.08)',
+        borderTop: '1px solid rgba(46,125,82,0.2)',
+        borderColor: 'rgba(46,125,82,0.2)',
         cursor: 'default',
         transition: `background-color 600ms ${easing.gentle}`,
         position: 'relative',
@@ -806,7 +805,7 @@ function PillarCard({
           left: 0,
           right: 0,
           height: '1px',
-          background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.6), transparent)',
+          background: 'linear-gradient(90deg, transparent, rgba(46,125,82,0.5), transparent)',
           transformOrigin: 'center',
         }}
       />
@@ -815,10 +814,10 @@ function PillarCard({
       <div
         style={{
           fontFamily: 'DM Sans, sans-serif',
-          fontSize: '0.6rem',
+          fontSize: '0.75rem',
           fontWeight: 500,
           letterSpacing: '0.28em',
-          color: 'rgba(201,168,76,0.4)',
+          color: 'rgba(46,125,82,0.85)',
           marginBottom: '2rem',
           display: 'flex',
           alignItems: 'center',
@@ -826,7 +825,7 @@ function PillarCard({
         }}
       >
         <span>{pillar.index}</span>
-        <span style={{ display: 'block', width: '18px', height: '1px', background: 'rgba(201,168,76,0.3)' }} />
+        <span style={{ display: 'block', width: '18px', height: '1px', background: 'rgba(46,125,82,0.4)' }} />
       </div>
 
       {/* Title */}
@@ -837,19 +836,19 @@ function PillarCard({
           fontSize: 'clamp(2rem, 3.5vw, 3rem)',
           lineHeight: 1,
           letterSpacing: '-0.02em',
-          color: '#C4BEB8',
+          color: '#07100A',
           marginBottom: '1.5rem',
         }}
       >
         {pillar.title}
       </h3>
 
-      {/* Gold divider — short */}
+      {/* Emerald divider — short */}
       <div
         style={{
           height: '1px',
           width: '32px',
-          background: 'rgba(201,168,76,0.35)',
+          background: 'rgba(46,125,82,0.5)',
           marginBottom: '1.5rem',
         }}
       />
@@ -858,10 +857,10 @@ function PillarCard({
       <p
         style={{
           fontFamily: 'DM Sans, sans-serif',
-          fontSize: 'clamp(0.875rem, 1.05vw, 0.9375rem)',
+          fontSize: 'clamp(0.9rem, 1.05vw, 1rem)',
           fontWeight: 300,
           lineHeight: 1.85,
-          color: 'rgba(196,190,184,0.38)',
+          color: 'rgba(7,16,10,0.65)',
         }}
       >
         {pillar.body}
@@ -975,6 +974,8 @@ export function BrandStorySection() {
     >
       <OpeningStatement />
       <FoundingStory />
+      {/* Green → Ivory transition */}
+      <div style={{ height: '160px', background: 'linear-gradient(180deg, #07100A 0%, #0D1C14 25%, #2A5C3D 60%, #FAF6EE 100%)' }} />
       <PhilosophyPillars />
     </section>
   )

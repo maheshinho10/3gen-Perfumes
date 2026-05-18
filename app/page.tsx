@@ -6,7 +6,7 @@ import { Footer }              from '@/src/components/layout/Footer'
 
 export default function HomePage() {
   return (
-    <main id="main-content" className="overflow-x-hidden" style={{ background: '#07100A' }}>
+    <main id="main-content" className="overflow-x-hidden" style={{ background: '#FAF6EE' }}>
       <HeroSection />
       <BrandStorySection />
       <CollectionSection />

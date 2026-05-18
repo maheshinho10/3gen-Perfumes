@@ -223,26 +223,26 @@ export function HeroSection() {
 
         {/* ── Desktop: three bottles side by side ─────────────────────── */}
         <div
-          className="hidden lg:flex md:flex md:scale-[0.85] lg:scale-100"
-          style={{ alignItems: 'flex-end', gap: 'clamp(0.75rem, 2.5vw, 2.5rem)', transformOrigin: 'center bottom' }}
+          className="hidden lg:flex md:flex md:scale-[0.95] lg:scale-[1.2]"
+          style={{ alignItems: 'flex-end', gap: '0.5rem', transformOrigin: 'center bottom' }}
         >
           <motion.div
-            style={{ transform: 'scale(1.06)', transformOrigin: 'bottom center', opacity: 0.90 }}
-            animate={{ y: [0, -10, 3, -8, 0] }}
+            style={{ scale: 0.82, transformOrigin: 'bottom center', opacity: 0.72 }}
+            animate={{ y: [0, -10, 2, -6, 0] }}
             transition={{ duration: 7.2, ease: 'easeInOut', repeat: Infinity, repeatType: 'loop', delay: 0.8 }}
           >
             <PerfumeBottle variant="white" />
           </motion.div>
           <motion.div
-            style={{ transform: 'scale(1.48)', transformOrigin: 'bottom center' }}
-            animate={{ y: [0, -14, 2, -10, 0] }}
+            style={{ scale: 1.0, transformOrigin: 'bottom center' }}
+            animate={{ y: [0, -12, 2, -8, 0] }}
             transition={{ duration: 6.5, ease: 'easeInOut', repeat: Infinity, repeatType: 'loop' }}
           >
             <PerfumeBottle variant="green" />
           </motion.div>
           <motion.div
-            style={{ transform: 'scale(1.06)', transformOrigin: 'bottom center', opacity: 0.90 }}
-            animate={{ y: [0, -12, 3, -9, 0] }}
+            style={{ scale: 0.82, transformOrigin: 'bottom center', opacity: 0.72 }}
+            animate={{ y: [0, -9, 1, -5, 0] }}
             transition={{ duration: 6.8, ease: 'easeInOut', repeat: Infinity, repeatType: 'loop', delay: 1.4 }}
           >
             <PerfumeBottle variant="tan" />

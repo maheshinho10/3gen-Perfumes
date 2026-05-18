@@ -52,7 +52,7 @@ function QuoteMark({ opacity = 0.15 }: { opacity?: number }) {
     >
       <path
         d="M0 36V22.5C0 14.5 4 7.5 12 2L15.5 6C11.167 9 9 13 9 18H16V36H0ZM26 36V22.5C26 14.5 30 7.5 38 2L41.5 6C37.167 9 35 13 35 18H42V36H26Z"
-        fill={`rgba(201,168,76,${opacity})`}
+        fill={`rgba(46,125,82,${opacity})`}
       />
     </svg>
   )
@@ -62,7 +62,7 @@ function QuoteMark({ opacity = 0.15 }: { opacity?: number }) {
 
 function ProgressBar({ active, dur }: { active: boolean; dur: number }) {
   return (
-    <div style={{ position: 'relative', height: '1px', background: 'rgba(201,168,76,0.1)', overflow: 'hidden', flex: 1 }}>
+    <div style={{ position: 'relative', height: '1px', background: 'rgba(46,125,82,0.15)', overflow: 'hidden', flex: 1 }}>
       <AnimatePresence>
         {active && (
           <motion.div
@@ -73,7 +73,7 @@ function ProgressBar({ active, dur }: { active: boolean; dur: number }) {
             transition={{ duration: dur / 1000, ease: 'linear' }}
             style={{
               position: 'absolute', inset: 0,
-              background: 'linear-gradient(90deg, rgba(201,168,76,0.5), rgba(201,168,76,0.9))',
+              background: 'linear-gradient(90deg, rgba(46,125,82,0.5), rgba(46,125,82,0.9))',
               transformOrigin: 'left center',
             }}
           />
@@ -102,13 +102,12 @@ function TestimonialCard({
       style={{
         position: 'relative',
         padding: 'clamp(2.5rem, 4vw, 4rem)',
-        background: 'linear-gradient(135deg, rgba(15,31,20,0.95) 0%, rgba(11,23,16,0.98) 100%)',
-        border: '1px solid rgba(201,168,76,0.14)',
+        background: 'linear-gradient(135deg, #EDE0C8 0%, #E5D5B5 100%)',
+        border: '1px solid rgba(46,125,82,0.3)',
         boxShadow: [
-          'inset 0 1px 0 rgba(201,168,76,0.12)',
-          'inset 0 -1px 0 rgba(0,0,0,0.3)',
-          '0 8px 40px rgba(0,0,0,0.5)',
-          '0 0 80px rgba(201,168,76,0.04)',
+          'inset 0 1px 0 rgba(46,125,82,0.2)',
+          '0 4px 24px rgba(7,16,10,0.08)',
+          '0 0 60px rgba(46,125,82,0.06)',
         ].join(', '),
         overflow: 'hidden',
       }}
@@ -116,26 +115,26 @@ function TestimonialCard({
       {/* Corner accent — top left */}
       <div style={{
         position: 'absolute', top: 0, left: 0, width: '40px', height: '40px',
-        borderTop: '1px solid rgba(201,168,76,0.4)', borderLeft: '1px solid rgba(201,168,76,0.4)',
+        borderTop: '1px solid rgba(46,125,82,0.5)', borderLeft: '1px solid rgba(46,125,82,0.5)',
         pointerEvents: 'none',
       }} />
       {/* Corner accent — bottom right */}
       <div style={{
         position: 'absolute', bottom: 0, right: 0, width: '40px', height: '40px',
-        borderBottom: '1px solid rgba(201,168,76,0.4)', borderRight: '1px solid rgba(201,168,76,0.4)',
+        borderBottom: '1px solid rgba(46,125,82,0.5)', borderRight: '1px solid rgba(46,125,82,0.5)',
         pointerEvents: 'none',
       }} />
 
       {/* Ambient glow */}
       <div style={{
         position: 'absolute', top: '-40%', left: '-10%', width: '60%', height: '80%',
-        background: 'radial-gradient(ellipse, rgba(201,168,76,0.04) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse, rgba(46,125,82,0.06) 0%, transparent 70%)',
         pointerEvents: 'none',
       }} />
 
       {/* Quote mark */}
       <div style={{ marginBottom: '2rem' }}>
-        <QuoteMark opacity={0.18} />
+        <QuoteMark opacity={0.35} />
       </div>
 
       {/* Quote text */}
@@ -147,7 +146,7 @@ function TestimonialCard({
           fontStyle: 'italic',
           lineHeight: 1.45,
           letterSpacing: '-0.015em',
-          color: 'rgba(196,190,184,0.88)',
+          color: 'rgba(7,16,10,0.85)',
           margin: 0,
         }}>
           &ldquo;{testimonial.quote}&rdquo;
@@ -157,7 +156,7 @@ function TestimonialCard({
       {/* Divider */}
       <div style={{
         height: '1px', marginBottom: '1.75rem',
-        background: 'linear-gradient(90deg, rgba(201,168,76,0.3), rgba(201,168,76,0.08) 60%, transparent)',
+        background: 'linear-gradient(90deg, rgba(46,125,82,0.5), rgba(46,125,82,0.15) 60%, transparent)',
       }} />
 
       {/* Attribution */}
@@ -165,13 +164,13 @@ function TestimonialCard({
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
           <span style={{
             fontFamily: 'DM Sans, sans-serif', fontSize: '0.8rem', fontWeight: 500,
-            letterSpacing: '0.08em', color: 'rgba(196,190,184,0.75)',
+            letterSpacing: '0.08em', color: 'rgba(7,16,10,0.75)',
           }}>
             {testimonial.author}
           </span>
           <span style={{
-            fontFamily: 'DM Sans, sans-serif', fontSize: '0.6rem', fontWeight: 400,
-            letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(196,190,184,0.3)',
+            fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', fontWeight: 400,
+            letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(7,16,10,0.45)',
           }}>
             {testimonial.location} — {testimonial.tenure}
           </span>
@@ -181,13 +180,13 @@ function TestimonialCard({
         <div style={{
           display: 'flex', alignItems: 'center', gap: '0.5rem',
           padding: '0.4rem 0.875rem',
-          border: '1px solid rgba(201,168,76,0.2)',
-          background: 'rgba(201,168,76,0.04)',
+          border: '1px solid rgba(46,125,82,0.35)',
+          background: 'rgba(46,125,82,0.07)',
         }}>
-          <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#C9A84C' }} />
+          <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#2E7D52' }} />
           <span style={{
-            fontFamily: 'DM Sans, sans-serif', fontSize: '0.55rem', fontWeight: 500,
-            letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.65)',
+            fontFamily: 'DM Sans, sans-serif', fontSize: '0.7rem', fontWeight: 500,
+            letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(46,125,82,0.85)',
           }}>
             {testimonial.fragrance}
           </span>
@@ -236,8 +235,8 @@ export function TestimonialsSection() {
       style={{
         position: 'relative',
         padding: 'clamp(5rem, 10vw, 12rem) clamp(1.5rem, 7vw, 7rem)',
-        background: 'linear-gradient(180deg, #0B1710 0%, #07100A 100%)',
-        borderTop: '1px solid rgba(42,96,64,0.2)',
+        background: '#FAF6EE',
+        borderTop: '1px solid rgba(46,125,82,0.2)',
         overflow: 'hidden',
       }}
       onMouseEnter={() => setPaused(true)}
@@ -248,7 +247,7 @@ export function TestimonialsSection() {
         position: 'absolute', right: '-5%', top: '50%', transform: 'translateY(-50%)',
         fontFamily: 'var(--font-cormorant-garamond), Georgia, serif',
         fontSize: 'clamp(10rem, 22vw, 28rem)', fontWeight: 200, lineHeight: 1,
-        color: 'transparent', WebkitTextStroke: '1px rgba(201,168,76,0.04)',
+        color: 'transparent', WebkitTextStroke: '1px rgba(46,125,82,0.08)',
         letterSpacing: '-0.06em', pointerEvents: 'none', userSelect: 'none', zIndex: 0,
       }}>
         &ldquo;
@@ -268,10 +267,10 @@ export function TestimonialsSection() {
             transition={{ duration: duration.slow, ease: easing.silk }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
-              <div style={{ width: '20px', height: '1px', background: '#C9A84C' }} />
+              <div style={{ width: '20px', height: '1px', background: '#2E7D52' }} />
               <span style={{
-                fontFamily: 'DM Sans, sans-serif', fontSize: '0.6rem', fontWeight: 500,
-                letterSpacing: '0.3em', textTransform: 'uppercase', color: '#C9A84C',
+                fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', fontWeight: 500,
+                letterSpacing: '0.3em', textTransform: 'uppercase', color: '#2E7D52',
               }}>
                 04 — Voices
               </span>
@@ -279,10 +278,10 @@ export function TestimonialsSection() {
             <h2 style={{
               fontFamily: 'var(--font-cormorant-garamond), Georgia, serif',
               fontWeight: 300, fontSize: 'clamp(2.5rem, 5vw, 6.5rem)',
-              lineHeight: 0.92, letterSpacing: '-0.035em', margin: 0, color: '#C4BEB8',
+              lineHeight: 0.92, letterSpacing: '-0.035em', margin: 0, color: '#07100A',
             }}>
               Worn once.{' '}
-              <span style={{ display: 'block', fontStyle: 'italic', color: 'rgba(196,190,184,0.4)' }}>
+              <span style={{ display: 'block', fontStyle: 'italic', color: 'rgba(7,16,10,0.35)' }}>
                 Remembered always.
               </span>
             </h2>
@@ -301,21 +300,21 @@ export function TestimonialsSection() {
                 whileTap={{ scale: 0.92, transition: { duration: 0.08 } }}
                 aria-label="Previous testimonial"
                 style={{
-                  width: '44px', height: '44px', border: '1px solid rgba(201,168,76,0.2)',
-                  background: 'transparent', cursor: 'pointer', color: 'rgba(201,168,76,0.6)',
+                  width: '44px', height: '44px', border: '1px solid rgba(46,125,82,0.3)',
+                  background: 'transparent', cursor: 'pointer', color: 'rgba(46,125,82,0.7)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   transition: `border-color 300ms, color 300ms, background 300ms`,
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget
-                  el.style.borderColor = 'rgba(201,168,76,0.5)'
-                  el.style.color = '#C9A84C'
-                  el.style.background = 'rgba(201,168,76,0.06)'
+                  el.style.borderColor = 'rgba(46,125,82,0.6)'
+                  el.style.color = '#2E7D52'
+                  el.style.background = 'rgba(46,125,82,0.07)'
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget
-                  el.style.borderColor = 'rgba(201,168,76,0.2)'
-                  el.style.color = 'rgba(201,168,76,0.6)'
+                  el.style.borderColor = 'rgba(46,125,82,0.3)'
+                  el.style.color = 'rgba(46,125,82,0.7)'
                   el.style.background = 'transparent'
                 }}
               >
@@ -334,21 +333,21 @@ export function TestimonialsSection() {
                 whileTap={{ scale: 0.92, transition: { duration: 0.08 } }}
                 aria-label="Next testimonial"
                 style={{
-                  width: '44px', height: '44px', border: '1px solid rgba(201,168,76,0.2)',
-                  background: 'transparent', cursor: 'pointer', color: 'rgba(201,168,76,0.6)',
+                  width: '44px', height: '44px', border: '1px solid rgba(46,125,82,0.3)',
+                  background: 'transparent', cursor: 'pointer', color: 'rgba(46,125,82,0.7)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   transition: `border-color 300ms, color 300ms, background 300ms`,
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget
-                  el.style.borderColor = 'rgba(201,168,76,0.5)'
-                  el.style.color = '#C9A84C'
-                  el.style.background = 'rgba(201,168,76,0.06)'
+                  el.style.borderColor = 'rgba(46,125,82,0.6)'
+                  el.style.color = '#2E7D52'
+                  el.style.background = 'rgba(46,125,82,0.07)'
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget
-                  el.style.borderColor = 'rgba(201,168,76,0.2)'
-                  el.style.color = 'rgba(201,168,76,0.6)'
+                  el.style.borderColor = 'rgba(46,125,82,0.3)'
+                  el.style.color = 'rgba(46,125,82,0.7)'
                   el.style.background = 'transparent'
                 }}
               >
@@ -380,7 +379,7 @@ export function TestimonialsSection() {
                   transition={{ duration: 0.35, ease: easing.luxury }}
                   style={{
                     fontFamily: 'var(--font-cormorant-garamond), Georgia, serif',
-                    fontSize: '1.5rem', fontWeight: 300, color: '#C9A84C',
+                    fontSize: '1.5rem', fontWeight: 300, color: '#2E7D52',
                     display: 'inline-block',
                   }}
                 >
@@ -388,8 +387,8 @@ export function TestimonialsSection() {
                 </motion.span>
               </AnimatePresence>
               <span style={{
-                fontFamily: 'DM Sans, sans-serif', fontSize: '0.6rem', fontWeight: 400,
-                color: 'rgba(201,168,76,0.3)', letterSpacing: '0.1em',
+                fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', fontWeight: 400,
+                color: 'rgba(46,125,82,0.45)', letterSpacing: '0.1em',
               }}>
                 / 0{TESTIMONIALS.length}
               </span>
@@ -437,9 +436,9 @@ export function TestimonialsSection() {
                   style={{
                     flex: isActive ? 2 : 1,
                     background: isActive
-                      ? 'linear-gradient(135deg, rgba(201,168,76,0.07) 0%, rgba(201,168,76,0.03) 100%)'
-                      : 'rgba(255,255,255,0.015)',
-                    border: `1px solid ${isActive ? 'rgba(201,168,76,0.22)' : 'rgba(201,168,76,0.06)'}`,
+                      ? 'linear-gradient(135deg, rgba(46,125,82,0.1) 0%, rgba(46,125,82,0.05) 100%)'
+                      : 'rgba(7,16,10,0.03)',
+                    border: `1px solid ${isActive ? 'rgba(46,125,82,0.3)' : 'rgba(7,16,10,0.08)'}`,
                     padding: '1.25rem',
                     cursor: 'pointer',
                     textAlign: 'left',
@@ -449,9 +448,9 @@ export function TestimonialsSection() {
                   }}
                 >
                   <div style={{
-                    fontFamily: 'DM Sans, sans-serif', fontSize: '0.6rem', fontWeight: 500,
+                    fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', fontWeight: 500,
                     letterSpacing: '0.14em', textTransform: 'uppercase',
-                    color: isActive ? 'rgba(201,168,76,0.8)' : 'rgba(201,168,76,0.3)',
+                    color: isActive ? 'rgba(46,125,82,0.9)' : 'rgba(7,16,10,0.6)',
                     marginBottom: '0.4rem',
                     transition: `color 400ms ${easing.gentle}`,
                   }}>
@@ -469,7 +468,7 @@ export function TestimonialsSection() {
                         <div style={{
                           fontFamily: 'var(--font-cormorant-garamond), Georgia, serif',
                           fontSize: '0.8rem', fontWeight: 300, fontStyle: 'italic',
-                          color: 'rgba(196,190,184,0.4)', lineHeight: 1.5,
+                          color: 'rgba(7,16,10,0.6)', lineHeight: 1.5,
                           marginTop: '0.35rem',
                           display: '-webkit-box',
                           WebkitLineClamp: 2,
@@ -503,7 +502,7 @@ export function TestimonialsSection() {
                 width: i === active ? '24px' : '6px',
                 height: '6px',
                 borderRadius: '3px',
-                background: i === active ? '#C9A84C' : 'rgba(201,168,76,0.2)',
+                background: i === active ? '#2E7D52' : 'rgba(46,125,82,0.25)',
                 border: 'none', cursor: 'pointer', padding: 0,
                 transition: `all 450ms ${easing.silk}`,
               }}

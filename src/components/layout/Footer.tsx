@@ -64,12 +64,12 @@ function NewsletterInput() {
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: easing.luxury }}
-        style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', paddingBottom: '0.75rem', borderBottom: '1px solid rgba(201,168,76,0.2)' }}
+        style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', paddingBottom: '0.75rem', borderBottom: '1px solid rgba(46,125,82,0.25)' }}
       >
-        <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#C9A84C' }} />
+        <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#2E7D52' }} />
         <span style={{
-          fontFamily: 'DM Sans, sans-serif', fontSize: '0.7rem', fontWeight: 300,
-          letterSpacing: '0.06em', color: 'rgba(201,168,76,0.65)',
+          fontFamily: 'DM Sans, sans-serif', fontSize: '0.85rem', fontWeight: 300,
+          letterSpacing: '0.06em', color: 'rgba(46,125,82,0.75)',
         }}>
           You are now part of the circle.
         </span>
@@ -81,7 +81,7 @@ function NewsletterInput() {
     <form onSubmit={handleSubmit} style={{ position: 'relative' }}>
       <div style={{
         display: 'flex', alignItems: 'stretch',
-        borderBottom: `1px solid ${focused ? 'rgba(201,168,76,0.45)' : 'rgba(201,168,76,0.18)'}`,
+        borderBottom: `1px solid ${focused ? 'rgba(46,125,82,0.5)' : 'rgba(7,16,10,0.2)'}`,
         transition: `border-color 400ms ${easing.gentle}`,
       }}>
         <input
@@ -95,9 +95,9 @@ function NewsletterInput() {
           aria-label="Email address for newsletter"
           style={{
             flex: 1, background: 'transparent', border: 'none', outline: 'none',
-            fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', fontWeight: 300,
-            letterSpacing: '0.04em', color: '#C4BEB8', paddingBottom: '0.75rem',
-            '::placeholder': { color: 'rgba(196,190,184,0.25)' },
+            fontFamily: 'DM Sans, sans-serif', fontSize: '0.9rem', fontWeight: 300,
+            letterSpacing: '0.04em', color: '#07100A', paddingBottom: '0.75rem',
+            '::placeholder': { color: 'rgba(7,16,10,0.3)' },
           } as React.CSSProperties}
         />
         <button
@@ -105,9 +105,9 @@ function NewsletterInput() {
           style={{
             background: 'transparent', border: 'none', cursor: 'pointer',
             paddingBottom: '0.75rem', paddingLeft: '1rem',
-            fontFamily: 'DM Sans, sans-serif', fontSize: '0.6rem', fontWeight: 500,
+            fontFamily: 'DM Sans, sans-serif', fontSize: '0.9rem', fontWeight: 500,
             letterSpacing: '0.22em', textTransform: 'uppercase',
-            color: focused ? '#C9A84C' : 'rgba(201,168,76,0.45)',
+            color: focused ? '#2E7D52' : 'rgba(46,125,82,0.55)',
             transition: `color 300ms ${easing.gentle}`,
           }}
         >
@@ -133,7 +133,7 @@ function FooterLink({ href, label }: { href: string; label: string }) {
         style={{
           fontFamily: 'DM Sans, sans-serif', fontSize: '0.8rem', fontWeight: 300,
           letterSpacing: '0.03em', lineHeight: 1,
-          color: hovered ? 'rgba(196,190,184,0.65)' : 'rgba(196,190,184,0.28)',
+          color: hovered ? 'rgba(7,16,10,0.9)' : 'rgba(7,16,10,0.65)',
           textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem',
           transition: `color 280ms cubic-bezier(0.19,1,0.22,1)`,
         }}
@@ -146,7 +146,7 @@ function FooterLink({ href, label }: { href: string; label: string }) {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0, opacity: 0 }}
               transition={{ type: 'spring', stiffness: 500, damping: 28 }}
-              style={{ display: 'inline-block', width: '3px', height: '3px', borderRadius: '50%', background: '#C9A84C', flexShrink: 0 }}
+              style={{ display: 'inline-block', width: '3px', height: '3px', borderRadius: '50%', background: '#2E7D52', flexShrink: 0 }}
             />
           )}
         </AnimatePresence>
@@ -168,8 +168,8 @@ export function Footer() {
       aria-label="Site footer"
       style={{
         position: 'relative',
-        background: 'linear-gradient(180deg, #07100A 0%, #070707 100%)',
-        borderTop: '1px solid rgba(201,168,76,0.1)',
+        background: 'linear-gradient(180deg, #FAF6EE 0%, #F0E8D5 100%)',
+        borderTop: '1px solid rgba(46,125,82,0.2)',
         overflow: 'hidden',
       }}
     >
@@ -187,7 +187,7 @@ export function Footer() {
           lineHeight: 1,
           letterSpacing: '0.1em',
           color: 'transparent',
-          WebkitTextStroke: '1px rgba(201,168,76,0.04)',
+          WebkitTextStroke: '1px rgba(46,125,82,0.1)',
           whiteSpace: 'nowrap',
           pointerEvents: 'none',
           userSelect: 'none',
@@ -204,7 +204,7 @@ export function Footer() {
         transition={{ duration: 2.0, ease: easing.silk }}
         style={{
           position: 'absolute', top: 0, left: 0, right: 0, height: '1px',
-          background: 'linear-gradient(90deg, transparent 5%, rgba(201,168,76,0.5) 30%, rgba(201,168,76,0.7) 50%, rgba(201,168,76,0.5) 70%, transparent 95%)',
+          background: 'linear-gradient(90deg, transparent 5%, rgba(46,125,82,0.5) 30%, rgba(46,125,82,0.7) 50%, rgba(46,125,82,0.5) 70%, transparent 95%)',
           transformOrigin: 'left center',
         }}
       />
@@ -232,14 +232,14 @@ export function Footer() {
                 fontFamily: 'var(--font-cormorant-garamond), Georgia, serif',
                 fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)',
                 fontWeight: 300, letterSpacing: '0.25em',
-                color: '#C4BEB8', marginBottom: '0.35rem',
+                color: '#07100A', marginBottom: '0.35rem',
               }}>
                 3GEN
               </div>
               <div style={{
-                fontFamily: 'DM Sans, sans-serif', fontSize: '0.55rem', fontWeight: 500,
+                fontFamily: 'DM Sans, sans-serif', fontSize: '0.85rem', fontWeight: 500,
                 letterSpacing: '0.28em', textTransform: 'uppercase',
-                color: 'rgba(201,168,76,0.4)',
+                color: 'rgba(46,125,82,0.6)',
               }}>
                 Parfumerie — Est. MMXXIV
               </div>
@@ -249,7 +249,7 @@ export function Footer() {
             <p style={{
               fontFamily: 'var(--font-cormorant-garamond), Georgia, serif',
               fontSize: '1rem', fontWeight: 300, fontStyle: 'italic',
-              lineHeight: 1.65, color: 'rgba(196,190,184,0.28)',
+              lineHeight: 1.65, color: 'rgba(7,16,10,0.6)',
               maxWidth: '28ch',
             }}>
               &ldquo;Crafted for the few. Remembered by all.&rdquo;
@@ -267,27 +267,27 @@ export function Footer() {
                   }}
                   onMouseEnter={(e) => {
                     const el = e.currentTarget
-                    el.querySelectorAll('[data-label]').forEach((n) => (n as HTMLElement).style.color = 'rgba(196,190,184,0.65)')
-                    el.querySelectorAll('[data-handle]').forEach((n) => (n as HTMLElement).style.color = '#C9A84C')
+                    el.querySelectorAll('[data-label]').forEach((n) => (n as HTMLElement).style.color = 'rgba(7,16,10,0.75)')
+                    el.querySelectorAll('[data-handle]').forEach((n) => (n as HTMLElement).style.color = '#2E7D52')
                   }}
                   onMouseLeave={(e) => {
                     const el = e.currentTarget
-                    el.querySelectorAll('[data-label]').forEach((n) => (n as HTMLElement).style.color = 'rgba(196,190,184,0.28)')
-                    el.querySelectorAll('[data-handle]').forEach((n) => (n as HTMLElement).style.color = 'rgba(201,168,76,0.3)')
+                    el.querySelectorAll('[data-label]').forEach((n) => (n as HTMLElement).style.color = 'rgba(7,16,10,0.5)')
+                    el.querySelectorAll('[data-handle]').forEach((n) => (n as HTMLElement).style.color = 'rgba(46,125,82,0.65)')
                   }}
                 >
                   <span data-label style={{
                     fontFamily: 'DM Sans, sans-serif', fontSize: '0.65rem', fontWeight: 500,
                     letterSpacing: '0.15em', textTransform: 'uppercase',
-                    color: 'rgba(196,190,184,0.28)',
+                    color: 'rgba(7,16,10,0.5)',
                     transition: `color 300ms ${easing.gentle}`,
                   }}>
                     {s.label}
                   </span>
-                  <div style={{ flex: 1, height: '1px', background: 'rgba(201,168,76,0.08)' }} />
+                  <div style={{ flex: 1, height: '1px', background: 'rgba(46,125,82,0.15)' }} />
                   <span data-handle style={{
-                    fontFamily: 'DM Sans, sans-serif', fontSize: '0.6rem', fontWeight: 300,
-                    letterSpacing: '0.06em', color: 'rgba(201,168,76,0.3)',
+                    fontFamily: 'DM Sans, sans-serif', fontSize: '0.9rem', fontWeight: 300,
+                    letterSpacing: '0.06em', color: 'rgba(46,125,82,0.65)',
                     transition: `color 300ms ${easing.gentle}`,
                   }}>
                     {s.handle}
@@ -308,12 +308,12 @@ export function Footer() {
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <span style={{
-                  fontFamily: 'DM Sans, sans-serif', fontSize: '0.6rem', fontWeight: 500,
-                  letterSpacing: '0.28em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.45)',
+                  fontFamily: 'DM Sans, sans-serif', fontSize: '0.9rem', fontWeight: 500,
+                  letterSpacing: '0.28em', textTransform: 'uppercase', color: 'rgba(46,125,82,0.65)',
                 }}>
                   {col.heading}
                 </span>
-                <div style={{ flex: 1, height: '1px', background: 'rgba(201,168,76,0.1)' }} />
+                <div style={{ flex: 1, height: '1px', background: 'rgba(46,125,82,0.18)' }} />
               </div>
               <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '0.875rem' }}>
                 {col.links.map((link) => (
@@ -332,17 +332,17 @@ export function Footer() {
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
               <span style={{
-                fontFamily: 'DM Sans, sans-serif', fontSize: '0.6rem', fontWeight: 500,
-                letterSpacing: '0.28em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.45)',
+                fontFamily: 'DM Sans, sans-serif', fontSize: '0.9rem', fontWeight: 500,
+                letterSpacing: '0.28em', textTransform: 'uppercase', color: 'rgba(46,125,82,0.65)',
               }}>
                 The Circle
               </span>
-              <div style={{ flex: 1, height: '1px', background: 'rgba(201,168,76,0.1)' }} />
+              <div style={{ flex: 1, height: '1px', background: 'rgba(46,125,82,0.18)' }} />
             </div>
 
             <p style={{
               fontFamily: 'DM Sans, sans-serif', fontSize: '0.78rem', fontWeight: 300,
-              lineHeight: 1.75, color: 'rgba(196,190,184,0.3)', maxWidth: '28ch',
+              lineHeight: 1.75, color: 'rgba(7,16,10,0.65)', maxWidth: '28ch',
             }}>
               Private announcements. Early access to new editions. Nothing more.
             </p>
@@ -350,8 +350,8 @@ export function Footer() {
             <NewsletterInput />
 
             <p style={{
-              fontFamily: 'DM Sans, sans-serif', fontSize: '0.6rem', fontWeight: 300,
-              letterSpacing: '0.04em', color: 'rgba(196,190,184,0.15)', lineHeight: 1.6,
+              fontFamily: 'DM Sans, sans-serif', fontSize: '0.9rem', fontWeight: 300,
+              letterSpacing: '0.04em', color: 'rgba(7,16,10,0.35)', lineHeight: 1.6,
             }}>
               By subscribing, you agree to our privacy policy. We do not share your data.
               Unsubscribe at any time.
@@ -362,7 +362,7 @@ export function Footer() {
         {/* ── Gold divider ─────────────────────────────────────────── */}
         <div style={{
           height: '1px', margin: '0 clamp(1.5rem, 7vw, 7rem)',
-          background: 'linear-gradient(90deg, transparent, rgba(201,168,76,0.12) 20%, rgba(201,168,76,0.12) 80%, transparent)',
+          background: 'linear-gradient(90deg, transparent, rgba(46,125,82,0.2) 20%, rgba(46,125,82,0.2) 80%, transparent)',
         }} />
 
         {/* ── Bottom bar ───────────────────────────────────────────── */}
@@ -378,8 +378,8 @@ export function Footer() {
         >
           {/* Copyright */}
           <span style={{
-            fontFamily: 'DM Sans, sans-serif', fontSize: '0.6rem', fontWeight: 300,
-            letterSpacing: '0.1em', color: 'rgba(196,190,184,0.18)',
+            fontFamily: 'DM Sans, sans-serif', fontSize: '0.9rem', fontWeight: 300,
+            letterSpacing: '0.1em', color: 'rgba(7,16,10,0.55)',
           }}>
             © {new Date().getFullYear()} 3GEN Parfumerie. All rights reserved.
           </span>
@@ -395,13 +395,13 @@ export function Footer() {
                 key={link.href}
                 href={link.href}
                 style={{
-                  fontFamily: 'DM Sans, sans-serif', fontSize: '0.6rem', fontWeight: 300,
+                  fontFamily: 'DM Sans, sans-serif', fontSize: '0.9rem', fontWeight: 300,
                   letterSpacing: '0.1em', textTransform: 'uppercase',
-                  color: 'rgba(196,190,184,0.18)', textDecoration: 'none',
+                  color: 'rgba(7,16,10,0.55)', textDecoration: 'none',
                   transition: `color 300ms ${easing.gentle}`,
                 }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(196,190,184,0.45)' }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(196,190,184,0.18)' }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(7,16,10,0.85)' }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(7,16,10,0.55)' }}
               >
                 {link.label}
               </Link>
@@ -411,8 +411,8 @@ export function Footer() {
           {/* Country/currency */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <span style={{
-              fontFamily: 'DM Sans, sans-serif', fontSize: '0.6rem', fontWeight: 400,
-              letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(196,190,184,0.18)',
+              fontFamily: 'DM Sans, sans-serif', fontSize: '0.9rem', fontWeight: 400,
+              letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(7,16,10,0.55)',
             }}>
               United States — USD
             </span>
